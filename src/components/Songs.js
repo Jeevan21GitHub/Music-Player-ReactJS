@@ -49,7 +49,7 @@ const Songs = (props) => {
           }}
         >
           <img
-            src={props.thumbUrl??"https://www.slidekit.com/wp-content/uploads/2023/03/Free-Music-Theme-Background-for-PowerPoint-150x150.webp"}
+            src={props?.thumbUrl}
             alt="img"
             className="rounded cursor-pointer"
           />

@@ -65,7 +65,7 @@ const Player = () => {
       <div className="flex flex-col justify-center md:flex-row">
         <div className="flex items-center justify-center py-1">
           <img
-            src={song?.thumbUrl}
+            src={song?.thumbUrl?song.thumbUrl:"https://www.slidekit.com/wp-content/uploads/2023/03/Free-Music-Theme-Background-for-PowerPoint-150x150.webp"}
             alt="img"
             className="w-20 h-20 rounded-full animate-spin-slow"
           />
