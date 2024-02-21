@@ -12,18 +12,19 @@ const Songs = (props) => {
   };
   useEffect(() => {
     const lastSong = localStorage.getItem("lastSong");
-    const startTime=localStorage.getItem('startTime')
+    const startTime = localStorage.getItem("startTime");
     dispatch(changeSong(JSON.parse(lastSong)));
     setTimeout(() => {
       const player = document.getElementById("audio");
       try {
-        player.currentTime = startTime;
+        if (player.currentTime > 0) {
+          player.currentTime = startTime;
+        }
       } catch (err) {
         console.log(err.message);
       }
-      
     });
-  },[dispatch,]);
+  }, [dispatch]);
   return (
     <section>
       <div className="flex flex-col justify-center text-center ">
@@ -52,7 +53,7 @@ const Songs = (props) => {
             alt="img"
             className="rounded cursor-pointer"
           />
-          {props.id === song.id ? (
+          {props?.id === song?.id ? (
             <div className="absolute text-center cursor-pointer mt-7 text-8xl opacity-45">
               <FaPause />
             </div>
