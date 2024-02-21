@@ -34,7 +34,7 @@ const Songs = (props) => {
             dispatch(changeSong(props));
             onChangeLocalStorage();
             setTimeout(() => {
-              if (song.id !== props.id) {
+              if (song?.id !== props?.id) {
                 const player = document.getElementById("audio");
                 player.addEventListener("loadeddata", () => {
                   player.play();
@@ -49,7 +49,7 @@ const Songs = (props) => {
           }}
         >
           <img
-            src={props.thumbUrl?props.thumbUrl:"https://www.slidekit.com/wp-content/uploads/2023/03/Free-Music-Theme-Background-for-PowerPoint-150x150.webp"}
+            src={props.thumbUrl??"https://www.slidekit.com/wp-content/uploads/2023/03/Free-Music-Theme-Background-for-PowerPoint-150x150.webp"}
             alt="img"
             className="rounded cursor-pointer"
           />
