@@ -49,7 +49,7 @@ const Songs = (props) => {
           }}
         >
           <img
-            src={props.thumbUrl}
+            src={props?.thumbUrl}
             alt="img"
             className="rounded cursor-pointer"
           />
